@@ -1,0 +1,29 @@
+<project default="jar">
+
+    <property name="src.dir" location="src"/>
+    <property name="classes.dir" location="classes"/>
+    <property name="packed.jar" location="multiset-impl.jar"/>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete file="${packed.jar}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}">
+            <classpath>
+                <pathelement location="multiset.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar basedir="${classes.dir}" destfile="${packed.jar}">
+            <manifest>
+                <attribute name="MultisetImpl-Class" value="ru.compscicenter.java2013.amikhaylova.hw3.MyMultiSet"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
