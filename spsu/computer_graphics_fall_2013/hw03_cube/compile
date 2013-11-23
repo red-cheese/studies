@@ -1,0 +1,1 @@
+g++ hw03.cpp -lGL -lGLU -lglut
