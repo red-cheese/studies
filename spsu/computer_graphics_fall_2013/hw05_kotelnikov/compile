@@ -1,0 +1,3 @@
+export LD_LIBRARY_PATH="/home/alex/opencv/lib"
+
+g++ hw05-kotelnikov.cpp -I"/home/alex/opencv/include" -L"/home/alex/opencv/lib" -lopencv_highgui -lopencv_imgproc -lopencv_core
